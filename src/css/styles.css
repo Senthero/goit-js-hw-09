@@ -4,9 +4,8 @@
   | default @import url()
   |============================
 */
+
 @import url('./reset.css');
-@import url('./vite-promo.css');
-@import url('./header.css');
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
@@ -22,4 +21,125 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu-title {
+  text-align: center;
+  margin: 100px 0 40px;
+}
+
+.menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.menu-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 36px;
+  border-radius: 8px;
+  color: #ffffff;
+  background-color: rgb(39, 122, 50);
+}
+
+.menu-link:hover,
+.menu-link:hover,
+.menu-link:focus,
+.menu-link:focus {
+  color: rgb(27, 51, 140);
+}
+
+.back {
+    padding: 8px 36px;
+    border-radius: 8px;
+    color: #ffffff;
+    background-color: rgb(39, 122, 50);
+  }
+
+    .back:hover {
+      color: rgb(27, 51, 140);
+    }
+
+* {
+  box-sizing: border-box;
+}
+
+.title-gallery {
+    text-align: center;
+    margin: 8px 0 24px;
+  }
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  flex-basis: calc((100% - 48px) / 3);
+}
+
+.gallery-image {
+  display: block;
+  max-width: 360px;
+  height: auto;
+  cursor: pointer;
+}
+
+.gallery-image:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+.sl-overlay {
+  background-color: hsla(237, 18%, 22%, 0.8) !important;
+}
+
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 408px;
+  padding: 24px;
+}
+
+.feedback-form input {
+  border: 1px solid rgb(128, 128, 128);
+  border-radius: 4px;
+  padding: 8px 16px;
+}
+
+.feedback-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.feedback-form textarea {
+  max-height: 80px;
+  border: 1px solid rgb(128, 128, 128);
+  border-radius: 4px;
+  padding: 8px 16px;
+  resize: none;
+}
+
+.feedback-form button {
+  display: flex;
+  margin-right: auto;
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: #ffffff;
+  border: none;
+  background-color: rgb(78, 117, 255);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.feedback-form button:hover {
+  background-color: #6c8cff;
 }
