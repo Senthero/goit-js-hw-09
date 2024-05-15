@@ -10,22 +10,21 @@ const refs = {
 };
 
 refs.form.addEventListener('input', (event) => {
-  if (event.target === refs.email) {
-    formData.email = event.target.value;
-  } else if (event.target === refs.message) {
-    formData.message = event.target.value;
-  }
+  const { name, value } = event.target;
   
-  localStorage.setItem('feedback-form-state', JSON.stringify(formData));
+  if (name === 'email' || name === 'message') {
+    formData[name] = value.trim();
+    localStorage.setItem('feedback-form-state', JSON.stringify(formData));
+  }
 });
 
-document.addEventListener('feedbackLoad', () => {
+window.addEventListener('load', () => {
   const savedData = localStorage.getItem('feedback-form-state');
   
   if (savedData) {
     const parsedData = JSON.parse(savedData);
-    formData.email = parsedData.email;
-    formData.message = parsedData.message;
+    formData.email = parsedData.email || "";
+    formData.message = parsedData.message || "";
     
     refs.email.value = formData.email;
     refs.message.value = formData.message;
